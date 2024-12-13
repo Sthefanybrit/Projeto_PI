@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Sua vida financeira, mais simples e eficiente a cada dia.</h1>
+        <p>Tenha total controle sobre suas finanças, com uma plataforma prática e segura que organiza seu dinheiro de forma eficiente e em tempo real.</p>
+        <a href="/cadastro" class="hero-btn">Comece Agora</a>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='porquinho1.png') }}" alt="Icon">
+    </div>
+</section>
+
+
+<!-- Recursos Section -->
+<section id="recursos" class="section">
+    <h2 class="section-heading" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Recursos</h2>
+    <div class="resources section-content">
+        <div class="resource-item">
+            <img src="{{ url_for('static', filename='icon1.png') }}" alt="Recurso 1">
+            <h4>Controle de Despesas</h4>
+            <p>Organize suas despesas em categorias e monitore seus gastos de maneira eficaz.</p>
+        </div>
+        <div class="resource-item">
+            <img src="{{ url_for('static', filename='icon2.png') }}" alt="Recurso 2" style="margin-top: 10px; margin-bottom: 10px;">
+            <h4>Metas de Economia</h4>
+            <p>Defina metas e acompanhe seu progresso para alcançar seus objetivos financeiros.</p>
+        </div>
+        <div class="resource-item">
+            <img src="{{ url_for('static', filename='icon3.png') }}" alt="Recurso 3">
+            <h4>Relatórios Gráficos</h4>
+            <p>Visualize seus hábitos de consumo com gráficos intuitivos e detalhados.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Quem Somos Section -->
+<section id="quem-somos" class="section" style="background-color: #f8c7e0;">
+    <h2 class="section-heading" style="padding-top: 20px;">Quem Somos</h2>
+    <div class="section-content">
+        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: 100px; margin-right: 100px; padding-bottom: 20px ;">Este site foi desenvolvido como parte da prática profissional das alunas Maria de Jesus, Nauany e Sthefany, com o objetivo de aplicar conhecimentos adquiridos em desenvolvimento web, design e usabilidade. Nosso foco é proporcionar uma experiência prática e intuitiva para organizar finanças pessoais.</p>
+    </div>
+</section>
+
+{% endblock %}

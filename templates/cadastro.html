@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro{% endblock %}
+
+{% block content %}
+<section class="cadastro-section">
+    <!-- Cabeçalho personalizado com logo e botão "Voltar" -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='ECONIZZE.png') }}" style="height: 60px; width: 190px;" alt="Logomarca">
+        </div>
+        <!-- Botão de voltar para a página inicial -->
+        <div>
+            <a href="/" class="btn">Voltar à Página Inicial</a>
+        </div>
+    </header>
+
+    <div class="cadastro-container">
+        <!-- Área para a imagem decorativa -->
+        <div class="cadastro-image">
+            <img src="{{ url_for('static', filename='porquinho3.png') }}" alt="Imagem Decorativa">
+        </div>
+
+        <!-- Área do formulário de cadastro -->
+        <div class="cadastro-form">
+            <h2>Cadastre-se</h2>
+
+            <!-- Exibir mensagens flash -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form action="/cadastro" method="POST">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required placeholder="Digite seu nome">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Digite seu email">
+
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+
+                <label for="confirm-password">Confirmar Senha</label>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirme sua senha">
+
+                <button type="submit" class="btn primary">Cadastrar</button>
+            </form>
+            <p class="login-link">Já tem uma conta? <a href="/login">Entrar</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Visão Geral{% endblock %}
+
+{% block content %}
+<section class="user-dashboard">
+    <!-- Cabeçalho mais fino com botões centralizados e botão de logout -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='ECONIZZE.png') }}" style="height: 40px; width: 150px;" alt="Logomarca">
+        </div>
+        <nav class="nav-links">
+            <!-- Botões de navegação do usuário -->
+            <a href="#" class="dashboard-btn">Visão Geral</a>
+            <a href="#" class="dashboard-btn">Histórico</a>
+            <a href="#" class="dashboard-btn">Relatórios</a>
+            <a href="#" class="dashboard-btn">Metas</a>
+            <a href="#" class="dashboard-btn">Dicas Financeiras</a>
+        </nav>
+        <div class="logout">
+            <a href="{{ url_for('logout') }}" class="btn logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da Visão Geral -->
+    <div class="dashboard-content">
+        <h2>Bem-vindo à sua Visão Geral</h2>
+        <p>Aqui você pode visualizar um resumo de suas finanças e acompanhar o seu progresso financeiro.</p>
+    </div>
+</section>
+{% endblock %}
